@@ -1,0 +1,187 @@
+@mixin screensetting($center: center) {
+    display: flex;
+    justify-content: $center;
+    align-items: center;
+    color: #fff;
+} 
+
+$headerhight : 56px;
+$backgroundcolor : #282828;
+
+*{  
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    button{
+        cursor: pointer;
+        border: none;
+    }
+}
+
+
+header {
+
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $backgroundcolor;
+    color: #fff;
+    height: $headerhight;
+    width: auto;
+    border-color: #fff;
+    padding: {
+        left: 16px;
+        right: 16px;
+    };
+
+    .logo{
+
+        @include screensetting();
+
+        height: $headerhight;
+
+        #bg{
+            background-color: $backgroundcolor;
+            height: inherit;
+            img{
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        #yt{
+            height: inherit;
+            border: 0;
+            padding: 0;
+            background-color: #030303;
+
+            img{
+                width: 120px;
+                height: 56px;
+            }
+        }
+    };
+
+    .search_bar{
+
+        @include screensetting();
+        width: auto;
+        height: $headerhight;
+        margin-left: 20px;
+        padding: 2px 6px 2px 6px;
+
+        .input_keyboard{
+            @include screensetting();
+            position: relative;
+
+            #keyboard{
+                position: absolute;
+                left: 545px;
+                z-index: 3;
+                background-color: $backgroundcolor;
+                width: 19px;
+                height: 11px;
+              
+                img{
+                    width: 19px;
+                    height: 11px;
+                }
+            }
+        }
+
+        #input{
+            
+            background-color: #121212;
+            height: 34px;
+            width: 570px;
+            border: none;
+            z-index: 2;
+            &::placeholder{
+                padding-left: 8px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+        };
+
+        button{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 64px;
+            height: 40px;
+            background-color: #313131;
+        
+            img{
+                width: 24px;
+                height: 24px;
+                background-color: white
+            }
+        }
+    };
+
+    .btn{
+
+        @include screensetting(space-around);
+        width: 156px;
+        height: 40px;
+        background-color: $backgroundcolor;
+        margin-right: 20px;
+        
+        button {
+            background-color: $backgroundcolor;
+            border: none;
+            
+            img{
+                border-radius: 20px;
+                width: 32px;
+                height: 32px;
+                padding: 8px;
+                
+                
+            }
+        }
+    };
+
+    
+};
+
+// 헤더 아래 바 //
+
+.below_header{
+
+    height: 56px;
+    background-color: $backgroundcolor;
+    border-top: 1px solid #717171;
+    border-bottom: 1px solid #717171;
+    @include screensetting(space-around);
+    overflow: auto;
+    white-space: nowrap;
+    
+    // &::-webkit-scrollbar{
+    //     display: none;
+    // }
+    button{
+        margin-right: 5px;
+        color: white;
+        background-color: #373737;
+        border-radius: 20px;
+        font-weight: 400;
+        padding: 6px 12px 6px 12px;
+        border: 1px solid #4B4B4B;
+    }
+}  
+
+
+// .side_bar {
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 56px;
+//     margin-left: 72px;
+    
+//     .btn{
+//         width: 72px;
+//         height: 74px;
+//     }
+// }
