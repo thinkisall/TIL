@@ -18,9 +18,10 @@ $backgroundcolor : #282828;
     }
 }
 
+// ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 헤더 시작ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ //
 
 header {
-
+    position: fixed;
     font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
@@ -28,7 +29,7 @@ header {
     background-color: $backgroundcolor;
     color: #fff;
     height: $headerhight;
-    width: auto;
+    width: 1490px;
     border-color: #fff;
     padding: {
         left: 16px;
@@ -71,10 +72,11 @@ header {
         margin-left: 20px;
         padding: 2px 6px 2px 6px;
 
+        
         .input_keyboard{
             @include screensetting();
             position: relative;
-
+            
             #keyboard{
                 position: absolute;
                 left: 545px;
@@ -82,14 +84,14 @@ header {
                 background-color: $backgroundcolor;
                 width: 19px;
                 height: 11px;
-              
+                
                 img{
                     width: 19px;
                     height: 11px;
                 }
             }
         }
-
+        
         #input{
             
             background-color: #121212;
@@ -104,8 +106,16 @@ header {
             }
         };
 
+        #mike {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            background-color: #181818;
+            border-radius: 20px
+        }
+        
         button{
-
+            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -147,41 +157,80 @@ header {
     
 };
 
-// 헤더 아래 바 //
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ main ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ  //
 
-.below_header{
-
-    height: 56px;
+main {
+    display: flex;
+    width: 1490px;
+    height: 2000px;
     background-color: $backgroundcolor;
-    border-top: 1px solid #717171;
-    border-bottom: 1px solid #717171;
-    @include screensetting(space-around);
-    overflow: auto;
-    white-space: nowrap;
-    
-    // &::-webkit-scrollbar{
-    //     display: none;
-    // }
-    button{
-        margin-right: 5px;
-        color: white;
-        background-color: #373737;
-        border-radius: 20px;
-        font-weight: 400;
-        padding: 6px 12px 6px 12px;
-        border: 1px solid #4B4B4B;
+
+    .side_bar{
+        margin-top: 74px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        width: 72px;
+        height: 657.6px;
+        background-color: $backgroundcolor;
+        
+        .btn{
+            width: 72px;
+            height: 74px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            button{
+                margin-bottom: 6px;
+                background-color: $backgroundcolor;
+
+            }
+
+            span{
+                font-size: 12px;
+                color: white;
+            }
+        }
     }
-}  
 
+    .below_header{
+        width: 1418px;
+        display: flex;
+        margin-left: 72px;
+        
+        .main_session{
+            width: 1418px;
+            margin-top: 56px;
 
-// .side_bar {
-//     display: flex;
-//     flex-direction: column;
-//     margin-top: 56px;
-//     margin-left: 72px;
+            
+            #top_icons{
+                position: fixed;
+                width: inherit;
+                display: flex;
+                align-items: center;
+                margin: 10px;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+
+                    button{
+                        margin-right: 10px;
+                        color: white;
+                        background-color: #373737;
+                        border-radius: 20px;
+                        font-weight: 400;
+                        padding: 6px 12px 6px 12px;
+                        border: 2px solid #4B4B4B;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+   
+                    }
+            }
+        }
     
-//     .btn{
-//         width: 72px;
-//         height: 74px;
-//     }
-// }
+    }   
+
+
+}
